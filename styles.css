@@ -1,0 +1,144 @@
+/* Reset e base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  background: none;
+}
+
+/* Fundo com imagem e blur */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://media.gettyimages.com/id/157308559/pt/foto/pilha-de-dinheiro-de-100-d%C3%B3lares-bills.jpg?s=612x612&w=gi&k=20&c=GSdmXgKfASD3IMoZ4Ei8h0EzDntSpXoliA6BbEG_Ciw=') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(6px) brightness(0.6);
+  z-index: -1;
+}
+
+/* Container principal */
+.container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.8rem;          /* maior que antes */
+  font-weight: bold;
+  font-family: Georgia, serif; /* fonte diferente e elegante */
+  color: #f0f0f0;             /* branco */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Campos e botões */
+input, select, button {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  background-color: #fff;
+  color: #333;
+}
+
+select {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+/* Resultado com fonte reduzida */
+#resultado {
+  margin-top: 20px;
+  font-size: 2.2rem; /* tamanho reduzido */
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  color: #fff;
+  background-color: #000;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 50px;
+  text-shadow: none;
+}
+
+/* Google Translate posicionado */
+#google_translate_element {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+  }
+
+  #resultado {
+    font-size: 1.6rem; /* também reduzido para mobile */
+    min-height: 40px;
+  }
+}
